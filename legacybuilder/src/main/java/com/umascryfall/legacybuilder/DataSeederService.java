@@ -23,42 +23,48 @@ public class DataSeederService {
         // Only run this if the database is empty so we don't duplicate data every time
         // we restart
         if (repository.count() == 0) {
-            try {
-                // 1. Read the JSON file from the resources folder
+           try {
+                // 1. Read the NEW JSON file from the resources folder
                 ObjectMapper mapper = new ObjectMapper();
-                InputStream inputStream = new ClassPathResource("raw_aptitudes.json").getInputStream();
+                TypeReference<List<Map<String, Object>>> typeReference = new TypeReference<>() {};
+                
+                // Point this to your new file
+                InputStream inputStream = new ClassPathResource("uma_master_data.json").getInputStream();
 
-                // Read the JSON as a list of Maps (Key-Value pairs)
-                List<Map<String, Integer>> rawAptitudes = mapper.readValue(inputStream,
-                        new TypeReference<List<Map<String, Integer>>>() {
-                        });
+                // Read the JSON using the updated type reference
+                List<Map<String, Object>> rawData = mapper.readValue(inputStream, typeReference);
 
                 List<UmaMusume> finalUmaList = new ArrayList<>();
 
                 // 2. Loop through every character in the JSON
-                for (Map<String, Integer> raw : rawAptitudes) {
+                for (Map<String, Object> raw : rawData) {
                     UmaMusume uma = new UmaMusume();
 
-                    // Set the ID (Converting the integer ID like 100101 to a String)
+                    // 1. Set the Base Info (Casting the generic Objects to their specific types)
                     uma.setId(String.valueOf(raw.get("id")));
+                    uma.setNameEng((String) raw.get("nameEng"));
+                    uma.setDefaultRarity((Integer) raw.get("defaultRarity"));
 
-                    // Translate the numbers to letters using our helper method below
-                    uma.setTurf(translate(raw.get("turf")));
-                    uma.setDirt(translate(raw.get("dirt")));
-                    uma.setShortDistance(translate(raw.get("shortDistance")));
-                    uma.setMileDistance(translate(raw.get("mileDistance")));
-                    uma.setMediumDistance(translate(raw.get("mediumDistance")));
-                    uma.setLongDistance(translate(raw.get("longDistance")));
-                    uma.setFrontRunner(translate(raw.get("frontRunner")));
-                    uma.setPaceChaser(translate(raw.get("paceChaser")));
-                    uma.setLateSurger(translate(raw.get("lateSurger")));
-                    // Using Integer for endCloser in case the JSON key mapping returns null
-                    // unexpectedly
-                    uma.setEndCloser(translate(raw.get("endCloser")));
+                    // Note: Since you are using the English patch, the Japanese names were
+                    // overwritten in the database. We will leave nameJp null for now.
+                    uma.setNameJp(null);
+
+                    // 2. Set the Aptitudes using your existing translate method
+                    // We cast the generic Object to an Integer before passing it to translate()
+                    uma.setTurf(translate((Integer) raw.get("turf")));
+                    uma.setDirt(translate((Integer) raw.get("dirt")));
+                    uma.setShortDistance(translate((Integer) raw.get("shortDistance")));
+                    uma.setMileDistance(translate((Integer) raw.get("mileDistance")));
+                    uma.setMediumDistance(translate((Integer) raw.get("mediumDistance")));
+                    uma.setLongDistance(translate((Integer) raw.get("longDistance")));
+                    uma.setFrontRunner(translate((Integer) raw.get("frontRunner")));
+                    uma.setPaceChaser(translate((Integer) raw.get("paceChaser")));
+                    uma.setLateSurger(translate((Integer) raw.get("lateSurger")));
+                    uma.setEndCloser(translate((Integer) raw.get("endCloser")));
 
                     finalUmaList.add(uma);
                 }
-
+                
                 // 3. Save the entire translated list to PostgreSQL
                 repository.saveAll(finalUmaList);
                 System.out.println("SUCCESS: Database seeded with " + finalUmaList.size() + " Uma Musume units!");

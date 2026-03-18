@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LegacybuilderApplication<legacybuilder>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.umascryfall.legacybuilder.LegacybuilderApplication",
+            "projectName": "legacybuilder",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
