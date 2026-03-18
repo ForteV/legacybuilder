@@ -72,19 +72,19 @@ public class DataSeederService {
     }
 
     // Cygames encodes aptitudes as integers 1-8. This converts them back to G-S.
-    private String translate(Integer value) {
+    private AptitudeGrade translate(Integer value) {
         if (value == null)
-            return "G";
+            return AptitudeGrade.G;
         return switch (value) {
-            case 1 -> "G";
-            case 2 -> "F";
-            case 3 -> "E";
-            case 4 -> "D";
-            case 5 -> "C";
-            case 6 -> "B";
-            case 7 -> "A";
-            case 8 -> "S";
-            default -> "G";
+            case 1 -> AptitudeGrade.G;
+            case 2 -> AptitudeGrade.F;
+            case 3 -> AptitudeGrade.E;
+            case 4 -> AptitudeGrade.D;
+            case 5 -> AptitudeGrade.C;
+            case 6 -> AptitudeGrade.B;
+            case 7 -> AptitudeGrade.A;
+            case 8 -> AptitudeGrade.S;
+            default -> AptitudeGrade.G;
         };
     }
 }
