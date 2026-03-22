@@ -1,5 +1,5 @@
 package com.umascryfall.legacybuilder.enums;
 
 public enum Surface {
-
+    TURF, DIRT
 }

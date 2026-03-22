@@ -1,4 +1,4 @@
-package com.umascryfall.legacybuilder;
+package com.umascryfall.legacybuilder.enums;
 
 public enum AptitudeGrade {
     S,

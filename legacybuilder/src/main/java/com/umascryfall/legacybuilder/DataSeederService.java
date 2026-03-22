@@ -6,6 +6,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
+import com.umascryfall.legacybuilder.enums.AptitudeGrade;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -23,11 +24,12 @@ public class DataSeederService {
         // Only run this if the database is empty so we don't duplicate data every time
         // we restart
         if (repository.count() == 0) {
-           try {
+            try {
                 // 1. Read the NEW JSON file from the resources folder
                 ObjectMapper mapper = new ObjectMapper();
-                TypeReference<List<Map<String, Object>>> typeReference = new TypeReference<>() {};
-                
+                TypeReference<List<Map<String, Object>>> typeReference = new TypeReference<>() {
+                };
+
                 // Point this to your new file
                 InputStream inputStream = new ClassPathResource("uma_master_data.json").getInputStream();
 
@@ -64,7 +66,7 @@ public class DataSeederService {
 
                     finalUmaList.add(uma);
                 }
-                
+
                 // 3. Save the entire translated list to PostgreSQL
                 repository.saveAll(finalUmaList);
                 System.out.println("SUCCESS: Database seeded with " + finalUmaList.size() + " Uma Musume units!");

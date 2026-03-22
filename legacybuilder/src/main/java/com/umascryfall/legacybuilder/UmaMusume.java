@@ -2,6 +2,7 @@ package com.umascryfall.legacybuilder;
 
 import jakarta.persistence.*;
 import java.util.List;
+import com.umascryfall.legacybuilder.enums.AptitudeGrade;
 
 @Entity
 @Table(name = "uma_musume")

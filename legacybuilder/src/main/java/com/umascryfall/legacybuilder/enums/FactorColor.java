@@ -1,8 +1,10 @@
-package com.umascryfall.legacybuilder;
+package com.umascryfall.legacybuilder.enums;
 
 public enum FactorColor {
-    BLUE,
-    PINK,
-    GREEN,
-    WHITE
+    BLUE_STAT,
+    RED_APTITUDE,
+    GREEN_UNIQUE,
+    WHITE_SKILL,
+    WHITE_RACE,
+    WHITE_SCENARIO // <-- This is your isolation layer
 }

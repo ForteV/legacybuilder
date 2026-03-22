@@ -1,6 +1,7 @@
 package com.umascryfall.legacybuilder;
 
 import jakarta.persistence.*;
+import com.umascryfall.legacybuilder.enums.FactorColor;
 
 @Entity
 @Table(name = "inheritance_factor")
