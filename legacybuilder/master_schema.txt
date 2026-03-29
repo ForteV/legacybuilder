@@ -1,0 +1,378 @@
+---- TABLE: announce_character ----
+CREATE TABLE 'announce_character' ('id' INTEGER NOT NULL, 'movie_id' INTEGER NOT NULL, 'can_end_second' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: announce_support_card ----
+CREATE TABLE 'announce_support_card' ('id' INTEGER NOT NULL, 'type' INTEGER NOT NULL, 'cuts_pattern' INTEGER NOT NULL, 'support_card_id_a' INTEGER NOT NULL, 'support_card_id_b' INTEGER NOT NULL, 'support_card_id_c' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: available_skill_set ----
+CREATE TABLE 'available_skill_set' ('id' INTEGER NOT NULL, 'available_skill_set_id' INTEGER NOT NULL, 'skill_id' INTEGER NOT NULL, 'need_rank' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: campaign_chara_story_schedule ----
+CREATE TABLE 'campaign_chara_story_schedule' ('campaign_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'story_id' INTEGER NOT NULL)
+
+---- TABLE: campaign_single_race_add_data ----
+CREATE TABLE 'campaign_single_race_add_data' ('id' INTEGER NOT NULL, 'race_additional_id' INTEGER NOT NULL, 'race_program_id' INTEGER NOT NULL, 'race_additional_reward_id' INTEGER NOT NULL, 'reward_limit' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: campaign_single_race_add_reward ----
+CREATE TABLE 'campaign_single_race_add_reward' ('id' INTEGER NOT NULL, 'race_additional_reward_id' INTEGER NOT NULL, 'item_category' INTEGER NOT NULL, 'item_id' INTEGER NOT NULL, 'reward_type' INTEGER NOT NULL, 'reward_value' INTEGER NOT NULL, 'reward_rate' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: card_data ----
+CREATE TABLE 'card_data' ('id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'default_rarity' INTEGER NOT NULL, 'limited_chara' INTEGER NOT NULL, 'available_skill_set_id' INTEGER NOT NULL, 'talent_speed' INTEGER NOT NULL, 'talent_stamina' INTEGER NOT NULL, 'talent_pow' INTEGER NOT NULL, 'talent_guts' INTEGER NOT NULL, 'talent_wiz' INTEGER NOT NULL, 'talent_group_id' INTEGER NOT NULL, 'bg_id' INTEGER NOT NULL, 'get_piece_id' INTEGER NOT NULL, 'running_style' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: card_rarity_data ----
+CREATE TABLE 'card_rarity_data' ('id' INTEGER NOT NULL, 'card_id' INTEGER NOT NULL, 'rarity' INTEGER NOT NULL, 'race_dress_id' INTEGER NOT NULL, 'skill_set' INTEGER NOT NULL, 'speed' INTEGER NOT NULL, 'stamina' INTEGER NOT NULL, 'pow' INTEGER NOT NULL, 'guts' INTEGER NOT NULL, 'wiz' INTEGER NOT NULL, 'max_speed' INTEGER NOT NULL, 'max_stamina' INTEGER NOT NULL, 'max_pow' INTEGER NOT NULL, 'max_guts' INTEGER NOT NULL, 'max_wiz' INTEGER NOT NULL, 'proper_distance_short' INTEGER NOT NULL, 'proper_distance_mile' INTEGER NOT NULL, 'proper_distance_middle' INTEGER NOT NULL, 'proper_distance_long' INTEGER NOT NULL, 'proper_running_style_nige' INTEGER NOT NULL, 'proper_running_style_senko' INTEGER NOT NULL, 'proper_running_style_sashi' INTEGER NOT NULL, 'proper_running_style_oikomi' INTEGER NOT NULL, 'proper_ground_turf' INTEGER NOT NULL, 'proper_ground_dirt' INTEGER NOT NULL, 'get_dress_id_1' INTEGER NOT NULL, 'get_dress_id_2' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: card_talent_hint_upgrade ----
+CREATE TABLE 'card_talent_hint_upgrade' ('id' INTEGER NOT NULL, 'rarity' INTEGER NOT NULL, 'talent_level' INTEGER NOT NULL, 'item_category_1' INTEGER NOT NULL, 'item_id_1' INTEGER NOT NULL, 'item_disp_order_1' INTEGER NOT NULL, 'item_num_1' INTEGER NOT NULL, 'item_category_2' INTEGER NOT NULL, 'item_id_2' INTEGER NOT NULL, 'item_disp_order_2' INTEGER NOT NULL, 'item_num_2' INTEGER NOT NULL, 'money_num' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: card_talent_upgrade ----
+CREATE TABLE 'card_talent_upgrade' ('id' INTEGER NOT NULL, 'talent_group_id' INTEGER NOT NULL, 'talent_level' INTEGER NOT NULL, 'item_category_1' INTEGER NOT NULL, 'item_id_1' INTEGER NOT NULL, 'item_num_1' INTEGER NOT NULL, 'item_category_2' INTEGER NOT NULL, 'item_id_2' INTEGER NOT NULL, 'item_num_2' INTEGER NOT NULL, 'item_category_3' INTEGER NOT NULL, 'item_id_3' INTEGER NOT NULL, 'item_num_3' INTEGER NOT NULL, 'item_category_4' INTEGER NOT NULL, 'item_id_4' INTEGER NOT NULL, 'item_num_4' INTEGER NOT NULL, 'item_category_5' INTEGER NOT NULL, 'item_id_5' INTEGER NOT NULL, 'item_num_5' INTEGER NOT NULL, 'item_category_6' INTEGER NOT NULL, 'item_id_6' INTEGER NOT NULL, 'item_num_6' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: challenge_match_race ----
+CREATE TABLE 'challenge_match_race' ('id' INTEGER NOT NULL, 'challenge_match_id' INTEGER NOT NULL, 'disp_order' INTEGER NOT NULL, 'challenge_match_bg_id' INTEGER NOT NULL, 'challenge_match_bg_sub_id' INTEGER NOT NULL, 'difficulty' INTEGER NOT NULL, 'race_type' INTEGER NOT NULL, 'race_appearance_rate' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'season' INTEGER NOT NULL, 'weather' INTEGER NOT NULL, 'ground' INTEGER NOT NULL, 'challenge_match_race_boss_npc_id' INTEGER NOT NULL, 'cost_rp' INTEGER NOT NULL, 'drop_reward_odds_id' INTEGER NOT NULL, 'victory_reward_odds_id' INTEGER NOT NULL, 'first_clear_item_category_1' INTEGER NOT NULL, 'first_clear_item_id_1' INTEGER NOT NULL, 'first_clear_item_num_1' INTEGER NOT NULL, 'first_clear_item_category_2' INTEGER NOT NULL, 'first_clear_item_id_2' INTEGER NOT NULL, 'first_clear_item_num_2' INTEGER NOT NULL, 'first_clear_item_category_3' INTEGER NOT NULL, 'first_clear_item_id_3' INTEGER NOT NULL, 'first_clear_item_num_3' INTEGER NOT NULL, 'pick_up_item_category_1' INTEGER NOT NULL, 'pick_up_item_id_1' INTEGER NOT NULL, 'pick_up_item_num_1' INTEGER NOT NULL, 'pick_up_item_category_2' INTEGER NOT NULL, 'pick_up_item_id_2' INTEGER NOT NULL, 'pick_up_item_num_2' INTEGER NOT NULL, 'pick_up_item_category_3' INTEGER NOT NULL, 'pick_up_item_id_3' INTEGER NOT NULL, 'pick_up_item_num_3' INTEGER NOT NULL, 'pick_up_item_category_4' INTEGER NOT NULL, 'pick_up_item_id_4' INTEGER NOT NULL, 'pick_up_item_num_4' INTEGER NOT NULL, 'pick_up_item_category_5' INTEGER NOT NULL, 'pick_up_item_id_5' INTEGER NOT NULL, 'pick_up_item_num_5' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: challenge_match_race_npc ----
+CREATE TABLE 'challenge_match_race_npc' ('id' INTEGER NOT NULL, 'npc_group_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'mob_id' INTEGER NOT NULL, 'race_dress_id' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'speed' INTEGER NOT NULL, 'stamina' INTEGER NOT NULL, 'pow' INTEGER NOT NULL, 'guts' INTEGER NOT NULL, 'wiz' INTEGER NOT NULL, 'proper_distance_short' INTEGER NOT NULL, 'proper_distance_mile' INTEGER NOT NULL, 'proper_distance_middle' INTEGER NOT NULL, 'proper_distance_long' INTEGER NOT NULL, 'proper_running_style_nige' INTEGER NOT NULL, 'proper_running_style_senko' INTEGER NOT NULL, 'proper_running_style_sashi' INTEGER NOT NULL, 'proper_running_style_oikomi' INTEGER NOT NULL, 'proper_ground_turf' INTEGER NOT NULL, 'proper_ground_dirt' INTEGER NOT NULL, 'skill_set_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: champions_news_chara_comment ----
+CREATE TABLE 'champions_news_chara_comment' ('id' INTEGER NOT NULL, 'round_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'big_flag' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: champions_news_chara_detail ----
+CREATE TABLE 'champions_news_chara_detail' ('id' INTEGER NOT NULL, 'chara_text_group' INTEGER NOT NULL, 'text_number' INTEGER NOT NULL, 'resource_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'single_win' INTEGER NOT NULL, 'nickname_id' INTEGER NOT NULL, 'parameter_type' INTEGER NOT NULL, 'parameter_min' INTEGER NOT NULL, 'running_style' INTEGER NOT NULL, 'proper_running_style_min' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: champions_news_chara_wininfo ----
+CREATE TABLE 'champions_news_chara_wininfo' ('id' INTEGER NOT NULL, 'round_id' INTEGER NOT NULL, 'race_count_type' INTEGER NOT NULL, 'win_min' INTEGER NOT NULL, 'win_max' INTEGER NOT NULL, 'chara_text_group' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: champions_news_race ----
+CREATE TABLE 'champions_news_race' ('id' INTEGER NOT NULL, 'round_id' INTEGER NOT NULL, 'win_percent_type' INTEGER NOT NULL, 'text_number' INTEGER NOT NULL, 'resource_id' INTEGER NOT NULL, 'race_track_id' INTEGER NOT NULL, 'ground' INTEGER NOT NULL, 'distance' INTEGER NOT NULL, 'weather' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: champions_race_condition ----
+CREATE TABLE 'champions_race_condition' ('champions_id' INTEGER NOT NULL, 'round_id' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'race_condition_id' INTEGER NOT NULL, PRIMARY KEY('champions_id','round_id'))
+
+---- TABLE: chara_category_motion ----
+CREATE TABLE 'chara_category_motion' ('chara_id' INTEGER NOT NULL, 'standby_motion_1' INTEGER NOT NULL, 'standby_motion_2' INTEGER NOT NULL, 'standby_motion_3' INTEGER NOT NULL, 'standby_motion_4' INTEGER NOT NULL, 'standby_motion_5' INTEGER NOT NULL, 'standby_motion_6' INTEGER NOT NULL, PRIMARY KEY('chara_id'))
+
+---- TABLE: chara_data ----
+CREATE TABLE 'chara_data' ('id' INTEGER NOT NULL, 'birth_year' INTEGER NOT NULL, 'birth_month' INTEGER NOT NULL, 'birth_day' INTEGER NOT NULL, 'sex' INTEGER NOT NULL, 'image_color_main' TEXT NOT NULL, 'image_color_sub' TEXT NOT NULL, 'ui_color_main' TEXT NOT NULL, 'ui_color_sub' TEXT NOT NULL, 'ui_training_color_1' TEXT NOT NULL, 'ui_training_color_2' TEXT NOT NULL, 'ui_border_color' TEXT NOT NULL, 'ui_num_color_1' TEXT NOT NULL, 'ui_num_color_2' TEXT NOT NULL, 'ui_turn_color' TEXT NOT NULL, 'ui_wipe_color_1' TEXT NOT NULL, 'ui_wipe_color_2' TEXT NOT NULL, 'ui_wipe_color_3' TEXT NOT NULL, 'ui_speech_color_1' TEXT NOT NULL, 'ui_speech_color_2' TEXT NOT NULL, 'ui_nameplate_color_1' TEXT NOT NULL, 'ui_nameplate_color_2' TEXT NOT NULL, 'height' INTEGER NOT NULL, 'bust' INTEGER NOT NULL, 'scale' INTEGER NOT NULL, 'skin' INTEGER NOT NULL, 'shape' INTEGER NOT NULL, 'socks' INTEGER NOT NULL, 'personal_dress' INTEGER NOT NULL, 'tail_model_id' INTEGER NOT NULL, 'race_running_type' INTEGER NOT NULL, 'ear_random_time_min' INTEGER NOT NULL, 'ear_random_time_max' INTEGER NOT NULL, 'tail_random_time_min' INTEGER NOT NULL, 'tail_random_time_max' INTEGER NOT NULL, 'story_ear_random_time_min' INTEGER NOT NULL, 'story_ear_random_time_max' INTEGER NOT NULL, 'story_tail_random_time_min' INTEGER NOT NULL, 'story_tail_random_time_max' INTEGER NOT NULL, 'attachment_model_id' INTEGER NOT NULL, 'mini_mayu_shader_type' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'chara_category' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: chara_motion_act ----
+CREATE TABLE 'chara_motion_act' ('id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'target_motion' INTEGER NOT NULL, 'command_name' TEXT NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: chara_motion_set ----
+CREATE TABLE 'chara_motion_set' ('id' INTEGER NOT NULL, 'body_motion' TEXT NOT NULL, 'body_motion_type' INTEGER NOT NULL, 'body_motion_play_type' INTEGER NOT NULL, 'face_type' TEXT NOT NULL, 'cheek' INTEGER NOT NULL, 'eye_default' INTEGER NOT NULL, 'ear_motion' TEXT NOT NULL, 'tail_motion' TEXT NOT NULL, 'tail_motion_type' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: chara_story_data ----
+CREATE TABLE 'chara_story_data' ('id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'episode_index' INTEGER NOT NULL, 'story_id' INTEGER NOT NULL, 'lock_type_1' INTEGER NOT NULL, 'lock_value_1_1' INTEGER NOT NULL, 'lock_value_1_2' INTEGER NOT NULL, 'add_reward_category_1' INTEGER NOT NULL, 'add_reward_id_1' INTEGER NOT NULL, 'add_reward_num_1' INTEGER NOT NULL, 'exp_type' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: chara_type ----
+CREATE TABLE 'chara_type' ('id' TEXT NOT NULL, 'chara_id' INTEGER NOT NULL, 'target_scene' INTEGER NOT NULL, 'target_cut' INTEGER NOT NULL, 'target_type' INTEGER NOT NULL, 'value' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: character_prop_animation ----
+CREATE TABLE 'character_prop_animation' ('id' INTEGER NOT NULL, 'prop_id' INTEGER NOT NULL, 'prop_anim_id' INTEGER NOT NULL, 'layer_index' INTEGER NOT NULL, 'use_state_name' TEXT NOT NULL, 'scene_type' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: character_system_lottery ----
+CREATE TABLE 'character_system_lottery' ('id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'card_id' INTEGER NOT NULL, 'card_rarity_id' INTEGER NOT NULL, 'trigger' INTEGER NOT NULL, 'param1' INTEGER NOT NULL, 'per' INTEGER NOT NULL, 'priority' INTEGER NOT NULL, 'sys_text_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: character_system_text ----
+CREATE TABLE 'character_system_text' ('character_id' INTEGER NOT NULL, 'voice_id' INTEGER NOT NULL, 'text' TEXT NOT NULL, 'cue_sheet' TEXT NOT NULL, 'cue_id' INTEGER NOT NULL, 'motion_set' INTEGER NOT NULL, 'scene' INTEGER NOT NULL, 'use_gallery' INTEGER NOT NULL, 'card_id' INTEGER NOT NULL, 'lip_sync_data' TEXT NOT NULL, 'gender' INTEGER NOT NULL, 'motion_second_set' INTEGER NOT NULL, 'motion_second_start' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, PRIMARY KEY('character_id','voice_id'))
+
+---- TABLE: daily_legend_race ----
+CREATE TABLE 'daily_legend_race' ('id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'legend_bg_id' INTEGER NOT NULL, 'legend_bg_sub_id' INTEGER NOT NULL, 'image_id' INTEGER NOT NULL, 'difficulty' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'season' INTEGER NOT NULL, 'weather' INTEGER NOT NULL, 'ground' INTEGER NOT NULL, 'legend_race_boss_npc_id' INTEGER NOT NULL, 'cost_num' INTEGER NOT NULL, 'drop_reward_odds_id' INTEGER NOT NULL, 'victory_reward_odds_id' INTEGER NOT NULL, 'first_clear_item_category_1' INTEGER NOT NULL, 'first_clear_item_id_1' INTEGER NOT NULL, 'first_clear_item_num_1' INTEGER NOT NULL, 'first_clear_item_category_2' INTEGER NOT NULL, 'first_clear_item_id_2' INTEGER NOT NULL, 'first_clear_item_num_2' INTEGER NOT NULL, 'first_clear_item_category_3' INTEGER NOT NULL, 'first_clear_item_id_3' INTEGER NOT NULL, 'first_clear_item_num_3' INTEGER NOT NULL, 'pick_up_item_category_1' INTEGER NOT NULL, 'pick_up_item_id_1' INTEGER NOT NULL, 'pick_up_item_num_1' INTEGER NOT NULL, 'pick_up_item_category_2' INTEGER NOT NULL, 'pick_up_item_id_2' INTEGER NOT NULL, 'pick_up_item_num_2' INTEGER NOT NULL, 'pick_up_item_category_3' INTEGER NOT NULL, 'pick_up_item_id_3' INTEGER NOT NULL, 'pick_up_item_num_3' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: daily_race ----
+CREATE TABLE 'daily_race' ('id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'difficulty' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'cost_num' INTEGER NOT NULL, 'unique_chara_npc_min' INTEGER NOT NULL, 'unique_chara_npc_max' INTEGER NOT NULL, 'normal_rewards_odds_id' INTEGER NOT NULL, 'bonus_rewards_odds_id' INTEGER NOT NULL, 'rare_reward_odds_id' INTEGER NOT NULL, 'first_clear_item_category_1' INTEGER NOT NULL, 'first_clear_item_id_1' INTEGER NOT NULL, 'first_clear_item_num_1' INTEGER NOT NULL, 'first_clear_item_category_2' INTEGER NOT NULL, 'first_clear_item_id_2' INTEGER NOT NULL, 'first_clear_item_num_2' INTEGER NOT NULL, 'first_clear_item_category_3' INTEGER NOT NULL, 'first_clear_item_id_3' INTEGER NOT NULL, 'first_clear_item_num_3' INTEGER NOT NULL, 'pick_up_item_category_1' INTEGER NOT NULL, 'pick_up_item_id_1' INTEGER NOT NULL, 'pick_up_item_num_1' INTEGER NOT NULL, 'pick_up_item_category_2' INTEGER NOT NULL, 'pick_up_item_id_2' INTEGER NOT NULL, 'pick_up_item_num_2' INTEGER NOT NULL, 'pick_up_item_category_3' INTEGER NOT NULL, 'pick_up_item_id_3' INTEGER NOT NULL, 'pick_up_item_num_3' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'end_date' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: daily_race_billing ----
+CREATE TABLE 'daily_race_billing' ('id' INTEGER NOT NULL, 'frequency' INTEGER NOT NULL, 'pay_cost' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: daily_race_npc ----
+CREATE TABLE 'daily_race_npc' ('id' INTEGER NOT NULL, 'npc_group_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'mob_id' INTEGER NOT NULL, 'race_dress_id' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'speed' INTEGER NOT NULL, 'stamina' INTEGER NOT NULL, 'pow' INTEGER NOT NULL, 'guts' INTEGER NOT NULL, 'wiz' INTEGER NOT NULL, 'proper_distance_short' INTEGER NOT NULL, 'proper_distance_mile' INTEGER NOT NULL, 'proper_distance_middle' INTEGER NOT NULL, 'proper_distance_long' INTEGER NOT NULL, 'proper_running_style_nige' INTEGER NOT NULL, 'proper_running_style_senko' INTEGER NOT NULL, 'proper_running_style_sashi' INTEGER NOT NULL, 'proper_running_style_oikomi' INTEGER NOT NULL, 'proper_ground_turf' INTEGER NOT NULL, 'proper_ground_dirt' INTEGER NOT NULL, 'skill_set_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: fan_raid_bonus_chara ----
+CREATE TABLE 'fan_raid_bonus_chara' ('id' INTEGER NOT NULL, 'fan_raid_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'add_fan' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: fan_raid_bonus_support_card ----
+CREATE TABLE 'fan_raid_bonus_support_card' ('id' INTEGER NOT NULL, 'fan_raid_id' INTEGER NOT NULL, 'support_card_id' INTEGER NOT NULL, 'add_fan' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: fan_raid_top_chara ----
+CREATE TABLE 'fan_raid_top_chara' ('id' INTEGER NOT NULL, 'top_data_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'dress_id' INTEGER NOT NULL, 'mini_motion_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: home_character_type ----
+CREATE TABLE 'home_character_type' ('pos_id' INTEGER NOT NULL, 'original_personality' INTEGER NOT NULL, 'change_personality' INTEGER NOT NULL, PRIMARY KEY('pos_id','original_personality'))
+
+---- TABLE: jukebox_chara_tag_data ----
+CREATE TABLE 'jukebox_chara_tag_data' ('id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'tag' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'end_date' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: legend_race ----
+CREATE TABLE 'legend_race' ('id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'legend_bg_id' INTEGER NOT NULL, 'legend_bg_sub_id' INTEGER NOT NULL, 'image_id' INTEGER NOT NULL, 'difficulty' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'season' INTEGER NOT NULL, 'weather' INTEGER NOT NULL, 'ground' INTEGER NOT NULL, 'legend_race_boss_npc_id' INTEGER NOT NULL, 'cost_num' INTEGER NOT NULL, 'drop_reward_odds_id' INTEGER NOT NULL, 'victory_reward_odds_id' INTEGER NOT NULL, 'first_clear_item_category_1' INTEGER NOT NULL, 'first_clear_item_id_1' INTEGER NOT NULL, 'first_clear_item_num_1' INTEGER NOT NULL, 'first_clear_item_category_2' INTEGER NOT NULL, 'first_clear_item_id_2' INTEGER NOT NULL, 'first_clear_item_num_2' INTEGER NOT NULL, 'first_clear_item_category_3' INTEGER NOT NULL, 'first_clear_item_id_3' INTEGER NOT NULL, 'first_clear_item_num_3' INTEGER NOT NULL, 'pick_up_item_category_1' INTEGER NOT NULL, 'pick_up_item_id_1' INTEGER NOT NULL, 'pick_up_item_num_1' INTEGER NOT NULL, 'pick_up_item_category_2' INTEGER NOT NULL, 'pick_up_item_id_2' INTEGER NOT NULL, 'pick_up_item_num_2' INTEGER NOT NULL, 'pick_up_item_category_3' INTEGER NOT NULL, 'pick_up_item_id_3' INTEGER NOT NULL, 'pick_up_item_num_3' INTEGER NOT NULL, 'notice_date' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'end_date' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: legend_race_billing ----
+CREATE TABLE 'legend_race_billing' ('id' INTEGER NOT NULL, 'frequency' INTEGER NOT NULL, 'pay_cost' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: legend_race_boss_npc ----
+CREATE TABLE 'legend_race_boss_npc' ('id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'race_dress_id' INTEGER NOT NULL, 'nickname_id' INTEGER NOT NULL, 'card_rarity_data_id' INTEGER NOT NULL, 'post' INTEGER NOT NULL, 'speed' INTEGER NOT NULL, 'stamina' INTEGER NOT NULL, 'pow' INTEGER NOT NULL, 'guts' INTEGER NOT NULL, 'wiz' INTEGER NOT NULL, 'proper_distance_short' INTEGER NOT NULL, 'proper_distance_mile' INTEGER NOT NULL, 'proper_distance_middle' INTEGER NOT NULL, 'proper_distance_long' INTEGER NOT NULL, 'proper_running_style_nige' INTEGER NOT NULL, 'proper_running_style_senko' INTEGER NOT NULL, 'proper_running_style_sashi' INTEGER NOT NULL, 'proper_running_style_oikomi' INTEGER NOT NULL, 'proper_ground_turf' INTEGER NOT NULL, 'proper_ground_dirt' INTEGER NOT NULL, 'skill_set_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: legend_race_cutt_chara_data ----
+CREATE TABLE 'legend_race_cutt_chara_data' ('id' INTEGER NOT NULL, 'sub_id' INTEGER NOT NULL, 'chara_num' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'target_timeline' INTEGER NOT NULL, 'target_list_index' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: legend_race_npc ----
+CREATE TABLE 'legend_race_npc' ('id' INTEGER NOT NULL, 'npc_group_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'mob_id' INTEGER NOT NULL, 'race_dress_id' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'speed' INTEGER NOT NULL, 'stamina' INTEGER NOT NULL, 'pow' INTEGER NOT NULL, 'guts' INTEGER NOT NULL, 'wiz' INTEGER NOT NULL, 'proper_distance_short' INTEGER NOT NULL, 'proper_distance_mile' INTEGER NOT NULL, 'proper_distance_middle' INTEGER NOT NULL, 'proper_distance_long' INTEGER NOT NULL, 'proper_running_style_nige' INTEGER NOT NULL, 'proper_running_style_senko' INTEGER NOT NULL, 'proper_running_style_sashi' INTEGER NOT NULL, 'proper_running_style_oikomi' INTEGER NOT NULL, 'proper_ground_turf' INTEGER NOT NULL, 'proper_ground_dirt' INTEGER NOT NULL, 'skill_set_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: main_story_race_bonus ----
+CREATE TABLE 'main_story_race_bonus' ('id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'bonus_type' INTEGER NOT NULL, 'bonus_value' INTEGER NOT NULL, 'condition_group' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: main_story_race_bonus_condition ----
+CREATE TABLE 'main_story_race_bonus_condition' ('id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'condition_type' INTEGER NOT NULL, 'condition_value_1' INTEGER NOT NULL, 'condition_value_2' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: main_story_race_chara_data ----
+CREATE TABLE 'main_story_race_chara_data' ('id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'bracket_number' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'mob_id' INTEGER NOT NULL, 'is_player' INTEGER NOT NULL, 'dress_id' INTEGER NOT NULL, 'chara_color_type' INTEGER NOT NULL, 'motivation' INTEGER NOT NULL, 'running_style' INTEGER NOT NULL, 'speed' INTEGER NOT NULL, 'stamina' INTEGER NOT NULL, 'pow' INTEGER NOT NULL, 'guts' INTEGER NOT NULL, 'wiz' INTEGER NOT NULL, 'proper_distance_short' INTEGER NOT NULL, 'proper_distance_mile' INTEGER NOT NULL, 'proper_distance_middle' INTEGER NOT NULL, 'proper_distance_long' INTEGER NOT NULL, 'proper_running_style_nige' INTEGER NOT NULL, 'proper_running_style_senko' INTEGER NOT NULL, 'proper_running_style_sashi' INTEGER NOT NULL, 'proper_running_style_oikomi' INTEGER NOT NULL, 'proper_ground_turf' INTEGER NOT NULL, 'proper_ground_dirt' INTEGER NOT NULL, 'skill_set_id' INTEGER NOT NULL, 'show_skill_type' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: main_story_race_data ----
+CREATE TABLE 'main_story_race_data' ('id' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'race_condition_id' INTEGER NOT NULL, 'clear_rank' INTEGER NOT NULL, 'bonus_group_id' INTEGER NOT NULL, 'gimmick_type' INTEGER NOT NULL, 'gimmick_trigger_skill' INTEGER NOT NULL, 'gimmick_match_race_asset' INTEGER NOT NULL, 'gimmick_unmatch_race_asset' INTEGER NOT NULL, 'bonus_chara_1' INTEGER NOT NULL, 'bonus_chara_2' INTEGER NOT NULL, 'bonus_chara_3' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: mini_bg_chara_motion ----
+CREATE TABLE 'mini_bg_chara_motion' ('id' INTEGER NOT NULL, 'bg_id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'sub_group_id' INTEGER NOT NULL, 'is_mob' INTEGER NOT NULL, 'main_chara_num' INTEGER NOT NULL, 'pos_obj' TEXT NOT NULL, 'position_file' TEXT NOT NULL, 'grid_pos_x' INTEGER NOT NULL, 'grid_pos_y' INTEGER NOT NULL, 'priority' INTEGER NOT NULL, 'motion_name' TEXT NOT NULL, 'timeline' TEXT NOT NULL, 'timeline_actor' TEXT NOT NULL, 'direction' INTEGER NOT NULL, 'chara_pos_y' TEXT NOT NULL, 'chara_shadow' INTEGER NOT NULL, 'use_grid_pos_job_select' INTEGER NOT NULL, 'position_anim' TEXT NOT NULL, 'fixed_render_order' INTEGER NOT NULL, 'se_cue_name01' TEXT NOT NULL, 'se_cue_sheet01' TEXT NOT NULL, 'se_start_frame01' INTEGER NOT NULL, 'se_cue_name02' TEXT NOT NULL, 'se_cue_sheet02' TEXT NOT NULL, 'se_start_frame02' INTEGER NOT NULL, 'effect_id' INTEGER NOT NULL, 'effect_start_sec' TEXT NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: name_card_bg ----
+CREATE TABLE 'name_card_bg' ('id' INTEGER NOT NULL, 'other_group' INTEGER NOT NULL, 'bg_group' INTEGER NOT NULL, 'time_group' INTEGER NOT NULL, 'bg_id' INTEGER NOT NULL, 'bg_sub' INTEGER NOT NULL, 'order' INTEGER NOT NULL, 'pos_x' INTEGER NOT NULL, 'pos_y' INTEGER NOT NULL, 'width' INTEGER NOT NULL, 'height' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: note_profile_text_type ----
+CREATE TABLE 'note_profile_text_type' ('id' INTEGER NOT NULL, 'text_type' INTEGER NOT NULL, 'text_category_id' INTEGER NOT NULL, 'sort' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: profile_card_bg ----
+CREATE TABLE 'profile_card_bg' ('id' INTEGER NOT NULL, 'background_id' INTEGER NOT NULL, 'card_type' INTEGER NOT NULL, 'sort_id' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race ----
+CREATE TABLE 'race' ('id' INTEGER NOT NULL, 'group' INTEGER NOT NULL, 'grade' INTEGER NOT NULL, 'course_set' INTEGER NOT NULL, 'thumbnail_id' INTEGER NOT NULL, 'ff_cue_name' TEXT NOT NULL, 'ff_cuesheet_name' TEXT NOT NULL, 'ff_anim' INTEGER NOT NULL, 'ff_camera' INTEGER NOT NULL, 'ff_camera_sub' INTEGER NOT NULL, 'ff_sub' INTEGER NOT NULL, 'goal_gate' INTEGER NOT NULL, 'goal_flower' INTEGER NOT NULL, 'audience' INTEGER NOT NULL, 'entry_num' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_bgm ----
+CREATE TABLE 'race_bgm' ('id' INTEGER NOT NULL, 'race_type' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'grade' INTEGER NOT NULL, 'single_mode_route_race_id' INTEGER NOT NULL, 'single_mode_program_id' INTEGER NOT NULL, 'difficulty' INTEGER NOT NULL, 'paddock_bgm_cue_name' TEXT NOT NULL, 'paddock_bgm_cuesheet_name' TEXT NOT NULL, 'entrytable_bgm_cue_name' TEXT NOT NULL, 'entrytable_bgm_cuesheet_name' TEXT NOT NULL, 'first_bgm_pattern' INTEGER NOT NULL, 'second_bgm_pattern' INTEGER NOT NULL, 'result_cutin_bgm_cue_name_1' TEXT NOT NULL, 'result_cutin_bgm_cuesheet_name_1' TEXT NOT NULL, 'result_cutin_bgm_cue_name_2' TEXT NOT NULL, 'result_cutin_bgm_cuesheet_name_2' TEXT NOT NULL, 'result_cutin_bgm_cue_name_3' TEXT NOT NULL, 'result_cutin_bgm_cuesheet_name_3' TEXT NOT NULL, 'result_list_bgm_cue_name_1' TEXT NOT NULL, 'result_list_bgm_cuesheet_name_1' TEXT NOT NULL, 'result_list_bgm_cue_name_2' TEXT NOT NULL, 'result_list_bgm_cuesheet_name_2' TEXT NOT NULL, 'result_list_bgm_cue_name_3' TEXT NOT NULL, 'result_list_bgm_cuesheet_name_3' TEXT NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_bgm_cutin ----
+CREATE TABLE 'race_bgm_cutin' ('id' INTEGER NOT NULL, 'card_id' INTEGER NOT NULL, 'bgm_group_id' INTEGER NOT NULL, 'fadeout_time' INTEGER NOT NULL, 'exclusive_control' INTEGER NOT NULL, 'short_cutin_bgm_cue_name' TEXT NOT NULL, 'short_cutin_bgm_cuesheet_name' TEXT NOT NULL, 'long_cutin_bgm_cue_name' TEXT NOT NULL, 'long_cutin_bgm_cuesheet_name' TEXT NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_bgm_cutin_extension_time ----
+CREATE TABLE 'race_bgm_cutin_extension_time' ('id' INTEGER NOT NULL, 'cutin_category' INTEGER NOT NULL, 'card_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'extension_sec' INTEGER NOT NULL, 'extension_sec_long' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_bgm_pattern ----
+CREATE TABLE 'race_bgm_pattern' ('id' INTEGER NOT NULL, 'bgm_time_1' INTEGER NOT NULL, 'bgm_cue_name_1' TEXT NOT NULL, 'bgm_cuesheet_name_1' TEXT NOT NULL, 'bgm_time_2' INTEGER NOT NULL, 'bgm_cue_name_2' TEXT NOT NULL, 'bgm_cuesheet_name_2' TEXT NOT NULL, 'bgm_time_3' INTEGER NOT NULL, 'bgm_cue_name_3' TEXT NOT NULL, 'bgm_cuesheet_name_3' TEXT NOT NULL, 'bgm_time_4' INTEGER NOT NULL, 'bgm_cue_name_4' TEXT NOT NULL, 'bgm_cuesheet_name_4' TEXT NOT NULL, 'bgm_time_5' INTEGER NOT NULL, 'bgm_cue_name_5' TEXT NOT NULL, 'bgm_cuesheet_name_5' TEXT NOT NULL, 'bgm_time_6' INTEGER NOT NULL, 'bgm_cue_name_6' TEXT NOT NULL, 'bgm_cuesheet_name_6' TEXT NOT NULL, 'bgm_time_7' INTEGER NOT NULL, 'bgm_cue_name_7' TEXT NOT NULL, 'bgm_cuesheet_name_7' TEXT NOT NULL, 'bgm_time_8' INTEGER NOT NULL, 'bgm_cue_name_8' TEXT NOT NULL, 'bgm_cuesheet_name_8' TEXT NOT NULL, 'bgm_time_9' INTEGER NOT NULL, 'bgm_cue_name_9' TEXT NOT NULL, 'bgm_cuesheet_name_9' TEXT NOT NULL, 'bgm_time_10' INTEGER NOT NULL, 'bgm_cue_name_10' TEXT NOT NULL, 'bgm_cuesheet_name_10' TEXT NOT NULL, 'bgm_time_11' INTEGER NOT NULL, 'bgm_cue_name_11' TEXT NOT NULL, 'bgm_cuesheet_name_11' TEXT NOT NULL, 'bgm_time_12' INTEGER NOT NULL, 'bgm_cue_name_12' TEXT NOT NULL, 'bgm_cuesheet_name_12' TEXT NOT NULL, 'bgm_time_13' INTEGER NOT NULL, 'bgm_cue_name_13' TEXT NOT NULL, 'bgm_cuesheet_name_13' TEXT NOT NULL, 'bgm_time_14' INTEGER NOT NULL, 'bgm_cue_name_14' TEXT NOT NULL, 'bgm_cuesheet_name_14' TEXT NOT NULL, 'bgm_time_15' INTEGER NOT NULL, 'bgm_cue_name_15' TEXT NOT NULL, 'bgm_cuesheet_name_15' TEXT NOT NULL, 'bgm_time_16' INTEGER NOT NULL, 'bgm_cue_name_16' TEXT NOT NULL, 'bgm_cuesheet_name_16' TEXT NOT NULL, 'bgm_time_17' INTEGER NOT NULL, 'bgm_cue_name_17' TEXT NOT NULL, 'bgm_cuesheet_name_17' TEXT NOT NULL, 'bgm_time_18' INTEGER NOT NULL, 'bgm_cue_name_18' TEXT NOT NULL, 'bgm_cuesheet_name_18' TEXT NOT NULL, 'bgm_time_19' INTEGER NOT NULL, 'bgm_cue_name_19' TEXT NOT NULL, 'bgm_cuesheet_name_19' TEXT NOT NULL, 'bgm_time_20' INTEGER NOT NULL, 'bgm_cue_name_20' TEXT NOT NULL, 'bgm_cuesheet_name_20' TEXT NOT NULL, 'bgm_time_21' INTEGER NOT NULL, 'bgm_cue_name_21' TEXT NOT NULL, 'bgm_cuesheet_name_21' TEXT NOT NULL, 'bgm_time_22' INTEGER NOT NULL, 'bgm_cue_name_22' TEXT NOT NULL, 'bgm_cuesheet_name_22' TEXT NOT NULL, 'bgm_time_23' INTEGER NOT NULL, 'bgm_cue_name_23' TEXT NOT NULL, 'bgm_cuesheet_name_23' TEXT NOT NULL, 'bgm_time_24' INTEGER NOT NULL, 'bgm_cue_name_24' TEXT NOT NULL, 'bgm_cuesheet_name_24' TEXT NOT NULL, 'bgm_time_25' INTEGER NOT NULL, 'bgm_cue_name_25' TEXT NOT NULL, 'bgm_cuesheet_name_25' TEXT NOT NULL, 'bgm_time_26' INTEGER NOT NULL, 'bgm_cue_name_26' TEXT NOT NULL, 'bgm_cuesheet_name_26' TEXT NOT NULL, 'bgm_time_27' INTEGER NOT NULL, 'bgm_cue_name_27' TEXT NOT NULL, 'bgm_cuesheet_name_27' TEXT NOT NULL, 'bgm_time_28' INTEGER NOT NULL, 'bgm_cue_name_28' TEXT NOT NULL, 'bgm_cuesheet_name_28' TEXT NOT NULL, 'bgm_time_29' INTEGER NOT NULL, 'bgm_cue_name_29' TEXT NOT NULL, 'bgm_cuesheet_name_29' TEXT NOT NULL, 'bgm_time_30' INTEGER NOT NULL, 'bgm_cue_name_30' TEXT NOT NULL, 'bgm_cuesheet_name_30' TEXT NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_bib_color ----
+CREATE TABLE 'race_bib_color' ('grade' INTEGER NOT NULL, 'race_id' INTEGER NOT NULL, 'bib_color' INTEGER NOT NULL, 'font_color' INTEGER NOT NULL, PRIMARY KEY('grade','race_id'))
+
+---- TABLE: race_condition ----
+CREATE TABLE 'race_condition' ('id' INTEGER NOT NULL, 'season' INTEGER NOT NULL, 'weather' INTEGER NOT NULL, 'ground' INTEGER NOT NULL, 'rate' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_course_set ----
+CREATE TABLE 'race_course_set' ('id' INTEGER NOT NULL, 'race_track_id' INTEGER NOT NULL, 'distance' INTEGER NOT NULL, 'ground' INTEGER NOT NULL, 'inout' INTEGER NOT NULL, 'turn' INTEGER NOT NULL, 'fence_set' INTEGER NOT NULL, 'float_lane_max' INTEGER NOT NULL, 'course_set_status_id' INTEGER NOT NULL, 'finish_time_min' INTEGER NOT NULL, 'finish_time_min_random_range' INTEGER NOT NULL, 'finish_time_max' INTEGER NOT NULL, 'finish_time_max_random_range' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_course_set_status ----
+CREATE TABLE 'race_course_set_status' ('course_set_status_id' INTEGER NOT NULL, 'target_status_1' INTEGER NOT NULL, 'target_status_2' INTEGER NOT NULL, PRIMARY KEY('course_set_status_id'))
+
+---- TABLE: race_env_define ----
+CREATE TABLE 'race_env_define' ('id' INTEGER NOT NULL, 'race_track_id' INTEGER NOT NULL, 'season' INTEGER NOT NULL, 'weather' INTEGER NOT NULL, 'timezone' INTEGER NOT NULL, 'resource' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_fence_set ----
+CREATE TABLE 'race_fence_set' ('id' INTEGER NOT NULL, 'fence_1' INTEGER NOT NULL, 'fence_2' INTEGER NOT NULL, 'fence_3' INTEGER NOT NULL, 'fence_4' INTEGER NOT NULL, 'fence_5' INTEGER NOT NULL, 'fence_6' INTEGER NOT NULL, 'fence_7' INTEGER NOT NULL, 'fence_8' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_instance ----
+CREATE TABLE 'race_instance' ('id' INTEGER NOT NULL, 'race_id' INTEGER NOT NULL, 'npc_group_id' INTEGER NOT NULL, 'date' INTEGER NOT NULL, 'time' INTEGER NOT NULL, 'clock_time' INTEGER NOT NULL, 'race_number' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_jikkyo_base ----
+CREATE TABLE 'race_jikkyo_base' ('id' INTEGER NOT NULL, 'mode' INTEGER NOT NULL, 'sub_mode' INTEGER NOT NULL, 'sub_mode_jump' INTEGER NOT NULL, 'situation' INTEGER NOT NULL, 'sub_situation' INTEGER NOT NULL, 'situation_end' INTEGER NOT NULL, 'disable_reentry_situation' INTEGER NOT NULL, 'trigger0' INTEGER NOT NULL, 'trigger1' INTEGER NOT NULL, 'trigger2' INTEGER NOT NULL, 'trigger3' INTEGER NOT NULL, 'trigger4' INTEGER NOT NULL, 'trigger5' INTEGER NOT NULL, 'trigger6' INTEGER NOT NULL, 'trigger7' INTEGER NOT NULL, 'trigger8' INTEGER NOT NULL, 'trigger9' INTEGER NOT NULL, 'message_group' INTEGER NOT NULL, 'comment_group' INTEGER NOT NULL, 'priority' INTEGER NOT NULL, 'per' INTEGER NOT NULL, 'immediate' INTEGER NOT NULL, 'discard' INTEGER NOT NULL, 'tension' INTEGER NOT NULL, 'camera_id' INTEGER NOT NULL, 'camera_horse1' INTEGER NOT NULL, 'camera_horse2' INTEGER NOT NULL, 'disable_reuse' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_jikkyo_comment ----
+CREATE TABLE 'race_jikkyo_comment' ('id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'message' TEXT NOT NULL, 'voice' TEXT NOT NULL, 'per' INTEGER NOT NULL, 'message_group' INTEGER NOT NULL, 'omit_tag' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_jikkyo_cue ----
+CREATE TABLE 'race_jikkyo_cue' ('id' INTEGER NOT NULL, 'cuesheet_id' INTEGER NOT NULL, 'cuesheet_type' INTEGER NOT NULL, PRIMARY KEY('id','cuesheet_type'))
+
+---- TABLE: race_jikkyo_message ----
+CREATE TABLE 'race_jikkyo_message' ('id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'message' TEXT NOT NULL, 'voice' TEXT NOT NULL, 'per' INTEGER NOT NULL, 'comment_group' INTEGER NOT NULL, 'reuse' INTEGER NOT NULL, 'omit_tag' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_jikkyo_race ----
+CREATE TABLE 'race_jikkyo_race' ('id' INTEGER NOT NULL, 'cue_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_jikkyo_trigger ----
+CREATE TABLE 'race_jikkyo_trigger' ('id' INTEGER NOT NULL, 'command' INTEGER NOT NULL, 'inequality' INTEGER NOT NULL, 'horse1' INTEGER NOT NULL, 'horse2' INTEGER NOT NULL, 'param1' INTEGER NOT NULL, 'param2' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_motivation_rate ----
+CREATE TABLE 'race_motivation_rate' ('id' INTEGER NOT NULL, 'motivation_rate' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_overrun_pattern ----
+CREATE TABLE 'race_overrun_pattern' ('id' INTEGER NOT NULL, 'finish_order_0_type' INTEGER NOT NULL, 'finish_order_1_type' INTEGER NOT NULL, 'finish_order_2_type' INTEGER NOT NULL, 'finish_order_3_type' INTEGER NOT NULL, 'finish_order_4_type' INTEGER NOT NULL, 'finish_order_lose_type' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_player_camera ----
+CREATE TABLE 'race_player_camera' ('id' INTEGER NOT NULL, 'priority' INTEGER NOT NULL, 'prefab_name' TEXT NOT NULL, 'category' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_popularity_proper_value ----
+CREATE TABLE 'race_popularity_proper_value' ('id' INTEGER NOT NULL, 'proper_type' INTEGER NOT NULL, 'proper_grade' INTEGER NOT NULL, 'value' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_proper_distance_rate ----
+CREATE TABLE 'race_proper_distance_rate' ('id' INTEGER NOT NULL, 'proper_rate_speed' INTEGER NOT NULL, 'proper_rate_power' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_proper_ground_rate ----
+CREATE TABLE 'race_proper_ground_rate' ('id' INTEGER NOT NULL, 'proper_rate' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_proper_runningstyle_rate ----
+CREATE TABLE 'race_proper_runningstyle_rate' ('id' INTEGER NOT NULL, 'proper_rate' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_single_mode_team_status ----
+CREATE TABLE 'race_single_mode_team_status' ('id' INTEGER NOT NULL, 'team_rank_threshold' INTEGER NOT NULL, 'add_status' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_track ----
+CREATE TABLE 'race_track' ('id' INTEGER NOT NULL, 'initial_lane_type' INTEGER NOT NULL, 'enable_half_gate' INTEGER NOT NULL, 'horse_num_gate_variation' INTEGER NOT NULL, 'turf_vision_type' INTEGER NOT NULL, 'footsmoke_color_type' INTEGER NOT NULL, 'area' INTEGER NOT NULL, 'flag_type' INTEGER NOT NULL, 'gate_panel_type' INTEGER NOT NULL, 'gate_lamp_type' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_trophy ----
+CREATE TABLE 'race_trophy' ('id' INTEGER NOT NULL, 'trophy_id' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'original_flag' INTEGER NOT NULL, 'disp_order' INTEGER NOT NULL, 'size' INTEGER NOT NULL, 'event_type' INTEGER NOT NULL, 'start_date' TEXT NOT NULL, 'display_end_date' TEXT NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: race_trophy_reward ----
+CREATE TABLE 'race_trophy_reward' ('trophy_id' INTEGER NOT NULL, 'item_category' INTEGER NOT NULL, 'item_id' INTEGER NOT NULL, 'item_num' INTEGER NOT NULL, PRIMARY KEY('trophy_id'))
+
+---- TABLE: single_mode_change_chara_route ----
+CREATE TABLE 'single_mode_change_chara_route' ('id' INTEGER NOT NULL, 'route_race_group_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'route_race_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_chara_effect ----
+CREATE TABLE 'single_mode_chara_effect' ('id' INTEGER NOT NULL, 'effect_type' INTEGER NOT NULL, 'effect_category' INTEGER NOT NULL, 'effect_group_id' INTEGER NOT NULL, 'priority' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_chara_grade ----
+CREATE TABLE 'single_mode_chara_grade' ('id' INTEGER NOT NULL, 'win_num' INTEGER NOT NULL, 'run_num' INTEGER NOT NULL, 'need_fan_count' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_chara_program ----
+CREATE TABLE 'single_mode_chara_program' ('id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'program_group' INTEGER NOT NULL, 'program_group_2' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_free_coin_race ----
+CREATE TABLE 'single_mode_free_coin_race' ('id' INTEGER NOT NULL, 'grade' INTEGER NOT NULL, 'order_min' INTEGER NOT NULL, 'order_max' INTEGER NOT NULL, 'coin_num' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_race_group ----
+CREATE TABLE 'single_mode_race_group' ('id' INTEGER NOT NULL, 'race_group_id' INTEGER NOT NULL, 'race_program_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_race_live ----
+CREATE TABLE 'single_mode_race_live' ('id' INTEGER NOT NULL, 'grade' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, 'music_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_route_race ----
+CREATE TABLE 'single_mode_route_race' ('id' INTEGER NOT NULL, 'race_set_id' INTEGER NOT NULL, 'target_type' INTEGER NOT NULL, 'sort_id' INTEGER NOT NULL, 'turn' INTEGER NOT NULL, 'race_type' INTEGER NOT NULL, 'condition_type' INTEGER NOT NULL, 'condition_id' INTEGER NOT NULL, 'condition_value_1' INTEGER NOT NULL, 'condition_value_2' INTEGER NOT NULL, 'determine_race' INTEGER NOT NULL, 'determine_race_flag' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_scout_chara ----
+CREATE TABLE 'single_mode_scout_chara' ('id' INTEGER NOT NULL, 'support_card_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'race_dress_id' INTEGER NOT NULL, 'live_dress_id' INTEGER NOT NULL, 'tag_support_card_id' INTEGER NOT NULL, 'speed' INTEGER NOT NULL, 'stamina' INTEGER NOT NULL, 'pow' INTEGER NOT NULL, 'guts' INTEGER NOT NULL, 'wiz' INTEGER NOT NULL, 'proper_distance_short' INTEGER NOT NULL, 'proper_distance_mile' INTEGER NOT NULL, 'proper_distance_middle' INTEGER NOT NULL, 'proper_distance_long' INTEGER NOT NULL, 'proper_running_style_nige' INTEGER NOT NULL, 'proper_running_style_senko' INTEGER NOT NULL, 'proper_running_style_sashi' INTEGER NOT NULL, 'proper_running_style_oikomi' INTEGER NOT NULL, 'proper_ground_turf' INTEGER NOT NULL, 'proper_ground_dirt' INTEGER NOT NULL, 'speed_limit' INTEGER NOT NULL, 'stamina_limit' INTEGER NOT NULL, 'pow_limit' INTEGER NOT NULL, 'guts_limit' INTEGER NOT NULL, 'wiz_limit' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_skill_need_point ----
+CREATE TABLE 'single_mode_skill_need_point' ('id' INTEGER NOT NULL, 'need_skill_point' INTEGER NOT NULL, 'status_type' INTEGER NOT NULL, 'status_value' INTEGER NOT NULL, 'solvable_type' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_special_chara ----
+CREATE TABLE 'single_mode_special_chara' ('id' INTEGER NOT NULL, 'scenario_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_tag_card_pos ----
+CREATE TABLE 'single_mode_tag_card_pos' ('id' INTEGER NOT NULL, 'support_card_id' INTEGER NOT NULL, 'pattern' INTEGER NOT NULL, 'pos_index' INTEGER NOT NULL, 'pos_x' INTEGER NOT NULL, 'pos_y' INTEGER NOT NULL, 'scale_x' INTEGER NOT NULL, 'scale_y' INTEGER NOT NULL, 'rot_z' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_top_bg_chara ----
+CREATE TABLE 'single_mode_top_bg_chara' ('id' INTEGER NOT NULL, 'scenario_id' INTEGER NOT NULL, 'bg_id' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'pos_x' INTEGER NOT NULL, 'pos_z' INTEGER NOT NULL, 'rotation_y' INTEGER NOT NULL, 'motion_set_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: single_mode_unique_chara ----
+CREATE TABLE 'single_mode_unique_chara' ('id' INTEGER NOT NULL, 'partner_id' INTEGER NOT NULL, 'scenario_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'period' INTEGER NOT NULL, 'training_placement' INTEGER NOT NULL, 'gain_flag_id' INTEGER NOT NULL, 'is_support_featured_stock' INTEGER NOT NULL, 'gain_role_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: skill_data ----
+CREATE TABLE 'skill_data' ('id' INTEGER NOT NULL, 'rarity' INTEGER NOT NULL, 'group_id' INTEGER NOT NULL, 'group_rate' INTEGER NOT NULL, 'filter_switch' INTEGER NOT NULL, 'grade_value' INTEGER NOT NULL, 'skill_category' INTEGER NOT NULL, 'tag_id' TEXT NOT NULL, 'unique_skill_id_1' INTEGER NOT NULL, 'unique_skill_id_2' INTEGER NOT NULL, 'exp_type' INTEGER NOT NULL, 'potential_per_default' INTEGER NOT NULL, 'activate_lot' INTEGER NOT NULL, 'precondition_1' TEXT NOT NULL, 'condition_1' TEXT NOT NULL, 'float_ability_time_1' INTEGER NOT NULL, 'ability_time_usage_1' INTEGER NOT NULL, 'float_cooldown_time_1' INTEGER NOT NULL, 'ability_type_1_1' INTEGER NOT NULL, 'ability_value_usage_1_1' INTEGER NOT NULL, 'ability_value_level_usage_1_1' INTEGER NOT NULL, 'float_ability_value_1_1' INTEGER NOT NULL, 'target_type_1_1' INTEGER NOT NULL, 'target_value_1_1' INTEGER NOT NULL, 'ability_type_1_2' INTEGER NOT NULL, 'ability_value_usage_1_2' INTEGER NOT NULL, 'ability_value_level_usage_1_2' INTEGER NOT NULL, 'float_ability_value_1_2' INTEGER NOT NULL, 'target_type_1_2' INTEGER NOT NULL, 'target_value_1_2' INTEGER NOT NULL, 'ability_type_1_3' INTEGER NOT NULL, 'ability_value_usage_1_3' INTEGER NOT NULL, 'ability_value_level_usage_1_3' INTEGER NOT NULL, 'float_ability_value_1_3' INTEGER NOT NULL, 'target_type_1_3' INTEGER NOT NULL, 'target_value_1_3' INTEGER NOT NULL, 'precondition_2' TEXT NOT NULL, 'condition_2' TEXT NOT NULL, 'float_ability_time_2' INTEGER NOT NULL, 'ability_time_usage_2' INTEGER NOT NULL, 'float_cooldown_time_2' INTEGER NOT NULL, 'ability_type_2_1' INTEGER NOT NULL, 'ability_value_usage_2_1' INTEGER NOT NULL, 'ability_value_level_usage_2_1' INTEGER NOT NULL, 'float_ability_value_2_1' INTEGER NOT NULL, 'target_type_2_1' INTEGER NOT NULL, 'target_value_2_1' INTEGER NOT NULL, 'ability_type_2_2' INTEGER NOT NULL, 'ability_value_usage_2_2' INTEGER NOT NULL, 'ability_value_level_usage_2_2' INTEGER NOT NULL, 'float_ability_value_2_2' INTEGER NOT NULL, 'target_type_2_2' INTEGER NOT NULL, 'target_value_2_2' INTEGER NOT NULL, 'ability_type_2_3' INTEGER NOT NULL, 'ability_value_usage_2_3' INTEGER NOT NULL, 'ability_value_level_usage_2_3' INTEGER NOT NULL, 'float_ability_value_2_3' INTEGER NOT NULL, 'target_type_2_3' INTEGER NOT NULL, 'target_value_2_3' INTEGER NOT NULL, 'popularity_add_param_1' INTEGER NOT NULL, 'popularity_add_value_1' INTEGER NOT NULL, 'popularity_add_param_2' INTEGER NOT NULL, 'popularity_add_value_2' INTEGER NOT NULL, 'disp_order' INTEGER NOT NULL, 'icon_id' INTEGER NOT NULL, 'plate_type' INTEGER NOT NULL, 'disable_singlemode' INTEGER NOT NULL, 'disable_count_condition' INTEGER NOT NULL, 'is_general_skill' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'end_date' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: skill_exp ----
+CREATE TABLE 'skill_exp' ('id' INTEGER NOT NULL, 'type' INTEGER NOT NULL, 'level' INTEGER NOT NULL, 'scale' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: skill_level_value ----
+CREATE TABLE 'skill_level_value' ('id' INTEGER NOT NULL, 'ability_type' INTEGER NOT NULL, 'level' INTEGER NOT NULL, 'float_ability_value_coef' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: skill_rarity ----
+CREATE TABLE 'skill_rarity' ('id' INTEGER NOT NULL, 'value' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: skill_set ----
+CREATE TABLE 'skill_set' ('id' INTEGER NOT NULL, 'skill_id1' INTEGER NOT NULL, 'skill_level1' INTEGER NOT NULL, 'skill_id2' INTEGER NOT NULL, 'skill_level2' INTEGER NOT NULL, 'skill_id3' INTEGER NOT NULL, 'skill_level3' INTEGER NOT NULL, 'skill_id4' INTEGER NOT NULL, 'skill_level4' INTEGER NOT NULL, 'skill_id5' INTEGER NOT NULL, 'skill_level5' INTEGER NOT NULL, 'skill_id6' INTEGER NOT NULL, 'skill_level6' INTEGER NOT NULL, 'skill_id7' INTEGER NOT NULL, 'skill_level7' INTEGER NOT NULL, 'skill_id8' INTEGER NOT NULL, 'skill_level8' INTEGER NOT NULL, 'skill_id9' INTEGER NOT NULL, 'skill_level9' INTEGER NOT NULL, 'skill_id10' INTEGER NOT NULL, 'skill_level10' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: story_event_bonus_card ----
+CREATE TABLE 'story_event_bonus_card' ('id' INTEGER NOT NULL, 'story_event_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'card_id' INTEGER NOT NULL, 'rarity_1' INTEGER NOT NULL, 'rarity_2' INTEGER NOT NULL, 'rarity_3' INTEGER NOT NULL, 'rarity_4' INTEGER NOT NULL, 'rarity_5' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'end_date' INTEGER NOT NULL, PRIMARY KEY('id'), UNIQUE('story_event_id','chara_id','card_id'))
+
+---- TABLE: story_event_bonus_group_support_card ----
+CREATE TABLE 'story_event_bonus_group_support_card' ('id' INTEGER NOT NULL, 'story_event_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'support_card_id' INTEGER NOT NULL, 'limit_0' INTEGER NOT NULL, 'limit_1' INTEGER NOT NULL, 'limit_2' INTEGER NOT NULL, 'limit_3' INTEGER NOT NULL, 'limit_4' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'end_date' INTEGER NOT NULL, PRIMARY KEY('id'), UNIQUE('story_event_id','chara_id','support_card_id'))
+
+---- TABLE: story_event_bonus_support_card ----
+CREATE TABLE 'story_event_bonus_support_card' ('id' INTEGER NOT NULL, 'story_event_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'rarity' INTEGER NOT NULL, 'support_card_id' INTEGER NOT NULL, 'limit_0' INTEGER NOT NULL, 'limit_1' INTEGER NOT NULL, 'limit_2' INTEGER NOT NULL, 'limit_3' INTEGER NOT NULL, 'limit_4' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'end_date' INTEGER NOT NULL, PRIMARY KEY('id'), UNIQUE('story_event_id','chara_id','rarity','support_card_id'))
+
+---- TABLE: story_event_mission_top_chara ----
+CREATE TABLE 'story_event_mission_top_chara' ('id' INTEGER NOT NULL, 'story_event_id' INTEGER NOT NULL, 'ending_flag' INTEGER NOT NULL, 'character_id' INTEGER NOT NULL, 'dress_id' INTEGER NOT NULL, 'menu_bg_id' INTEGER NOT NULL, 'menu_bg_sub_id' INTEGER NOT NULL, 'bgm_cue_name' TEXT NOT NULL, 'bgm_cuesheet_name' TEXT NOT NULL, 'env_cue_name' TEXT NOT NULL, 'env_cuesheet_name' TEXT NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: story_event_top_chara ----
+CREATE TABLE 'story_event_top_chara' ('id' INTEGER NOT NULL, 'story_event_id' INTEGER NOT NULL, 'min_episode_index' INTEGER NOT NULL, 'max_episode_index' INTEGER NOT NULL, 'ending_flag' INTEGER NOT NULL, 'character_id' INTEGER NOT NULL, 'dress_id' INTEGER NOT NULL, 'menu_bg_id' INTEGER NOT NULL, 'menu_bg_sub_id' INTEGER NOT NULL, 'bgm_cue_name' TEXT NOT NULL, 'bgm_cuesheet_name' TEXT NOT NULL, 'env_cue_name' TEXT NOT NULL, 'env_cuesheet_name' TEXT NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: succession_factor ----
+CREATE TABLE 'succession_factor' ('factor_id' INTEGER NOT NULL, 'factor_group_id' INTEGER NOT NULL, 'rarity' INTEGER NOT NULL, 'grade' INTEGER NOT NULL, 'factor_type' INTEGER NOT NULL, 'effect_group_id' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'end_date' INTEGER NOT NULL, PRIMARY KEY('factor_id'))
+
+---- TABLE: succession_factor_effect ----
+CREATE TABLE 'succession_factor_effect' ('id' INTEGER NOT NULL, 'factor_group_id' INTEGER NOT NULL, 'effect_id' INTEGER NOT NULL, 'target_type' INTEGER NOT NULL, 'value_1' INTEGER NOT NULL, 'value_2' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: succession_initial_factor ----
+CREATE TABLE 'succession_initial_factor' ('id' INTEGER NOT NULL, 'factor_type' INTEGER NOT NULL, 'value_1' INTEGER NOT NULL, 'value_2' INTEGER NOT NULL, 'add_point' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: succession_relation ----
+CREATE TABLE 'succession_relation' ('relation_type' INTEGER NOT NULL, 'relation_point' INTEGER NOT NULL, PRIMARY KEY('relation_type'))
+
+---- TABLE: succession_relation_member ----
+CREATE TABLE 'succession_relation_member' ('id' INTEGER NOT NULL, 'relation_type' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: succession_relation_rank ----
+CREATE TABLE 'succession_relation_rank' ('relation_rank' INTEGER NOT NULL, 'rank_value_min' INTEGER NOT NULL, 'rank_value_max' INTEGER NOT NULL, PRIMARY KEY('relation_rank'))
+
+---- TABLE: succession_rental ----
+CREATE TABLE 'succession_rental' ('id' INTEGER NOT NULL, 'rental_rank' INTEGER NOT NULL, 'rental_num' INTEGER NOT NULL, 'use_value1' INTEGER NOT NULL, 'use_value2' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: support_card_data ----
+CREATE TABLE 'support_card_data' ('id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'rarity' INTEGER NOT NULL, 'exchange_item_id' INTEGER NOT NULL, 'effect_table_id' INTEGER NOT NULL, 'unique_effect_id' INTEGER NOT NULL, 'command_type' INTEGER NOT NULL, 'command_id' INTEGER NOT NULL, 'support_card_type' INTEGER NOT NULL, 'skill_set_id' INTEGER NOT NULL, 'detail_pos_x' INTEGER NOT NULL, 'detail_pos_y' INTEGER NOT NULL, 'detail_scale' INTEGER NOT NULL, 'detail_rot_z' INTEGER NOT NULL, 'start_date' INTEGER NOT NULL, 'outing_max' INTEGER NOT NULL, 'effect_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: support_card_effect_table ----
+CREATE TABLE 'support_card_effect_table' ('id' INTEGER NOT NULL, 'type' INTEGER NOT NULL, 'init' INTEGER NOT NULL, 'limit_lv5' INTEGER NOT NULL, 'limit_lv10' INTEGER NOT NULL, 'limit_lv15' INTEGER NOT NULL, 'limit_lv20' INTEGER NOT NULL, 'limit_lv25' INTEGER NOT NULL, 'limit_lv30' INTEGER NOT NULL, 'limit_lv35' INTEGER NOT NULL, 'limit_lv40' INTEGER NOT NULL, 'limit_lv45' INTEGER NOT NULL, 'limit_lv50' INTEGER NOT NULL, PRIMARY KEY('id','type'))
+
+---- TABLE: support_card_group ----
+CREATE TABLE 'support_card_group' ('id' INTEGER NOT NULL, 'support_card_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'outing_max' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: support_card_level ----
+CREATE TABLE 'support_card_level' ('id' INTEGER NOT NULL, 'rarity' INTEGER NOT NULL, 'level' INTEGER NOT NULL, 'total_exp' INTEGER NOT NULL, PRIMARY KEY('id'), UNIQUE('rarity','level'))
+
+---- TABLE: support_card_limit ----
+CREATE TABLE 'support_card_limit' ('rarity' INTEGER NOT NULL, 'limit_0' INTEGER NOT NULL, 'limit_1' INTEGER NOT NULL, 'limit_2' INTEGER NOT NULL, 'limit_3' INTEGER NOT NULL, 'limit_4' INTEGER NOT NULL, PRIMARY KEY('rarity'))
+
+---- TABLE: support_card_limit_break ----
+CREATE TABLE 'support_card_limit_break' ('id' INTEGER NOT NULL, 'rarity' INTEGER NOT NULL, 'item_id' INTEGER NOT NULL, 'item_num' INTEGER NOT NULL, 'disp_order' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: support_card_team_score_bonus ----
+CREATE TABLE 'support_card_team_score_bonus' ('id' INTEGER NOT NULL, 'level' INTEGER NOT NULL, 'score_rate' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: support_card_unique_effect ----
+CREATE TABLE 'support_card_unique_effect' ('id' INTEGER NOT NULL, 'lv' INTEGER NOT NULL, 'type_0' INTEGER NOT NULL, 'value_0' INTEGER NOT NULL, 'value_0_1' INTEGER NOT NULL, 'value_0_2' INTEGER NOT NULL, 'value_0_3' INTEGER NOT NULL, 'value_0_4' INTEGER NOT NULL, 'type_1' INTEGER NOT NULL, 'value_1' INTEGER NOT NULL, 'value_1_1' INTEGER NOT NULL, 'value_1_2' INTEGER NOT NULL, 'value_1_3' INTEGER NOT NULL, 'value_1_4' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: team_building_chara_count ----
+CREATE TABLE 'team_building_chara_count' ('id' INTEGER NOT NULL, 'collection_chara_min' INTEGER NOT NULL, 'collection_chara_max' INTEGER NOT NULL, 'bonus_value' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: team_building_chara_group ----
+CREATE TABLE 'team_building_chara_group' ('id' INTEGER NOT NULL, 'chara_group_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: team_building_collection_chara ----
+CREATE TABLE 'team_building_collection_chara' ('id' INTEGER NOT NULL, 'team_building_event_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'condition_type_1' INTEGER NOT NULL, 'bonus_type_1' INTEGER NOT NULL, 'bonus_value_1' INTEGER NOT NULL, 'condition_type_2' INTEGER NOT NULL, 'bonus_type_2' INTEGER NOT NULL, 'bonus_value_2' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: team_building_race ----
+CREATE TABLE 'team_building_race' ('id' INTEGER NOT NULL, 'team_building_event_id' INTEGER NOT NULL, 'rotation_order' INTEGER NOT NULL, 'bg_id' INTEGER NOT NULL, 'bg_sub_id' INTEGER NOT NULL, 'race_instance_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: team_building_race_npc ----
+CREATE TABLE 'team_building_race_npc' ('id' INTEGER NOT NULL, 'npc_group_id' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'mob_id' INTEGER NOT NULL, 'race_dress_id' INTEGER NOT NULL, 'speed' INTEGER NOT NULL, 'stamina' INTEGER NOT NULL, 'pow' INTEGER NOT NULL, 'guts' INTEGER NOT NULL, 'wiz' INTEGER NOT NULL, 'proper_distance_short' INTEGER NOT NULL, 'proper_distance_mile' INTEGER NOT NULL, 'proper_distance_middle' INTEGER NOT NULL, 'proper_distance_long' INTEGER NOT NULL, 'proper_running_style_nige' INTEGER NOT NULL, 'proper_running_style_senko' INTEGER NOT NULL, 'proper_running_style_sashi' INTEGER NOT NULL, 'proper_running_style_oikomi' INTEGER NOT NULL, 'proper_ground_turf' INTEGER NOT NULL, 'proper_ground_dirt' INTEGER NOT NULL, 'skill_set_id' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: team_stadium_race_result_motion ----
+CREATE TABLE 'team_stadium_race_result_motion' ('character_id' INTEGER NOT NULL, 'win_1' INTEGER NOT NULL, 'win_2' INTEGER NOT NULL, 'win_2_position_y' INTEGER NOT NULL, 'win_3' INTEGER NOT NULL, 'win_3_position_y' INTEGER NOT NULL, 'win_4' INTEGER NOT NULL, 'win_4_position_y' INTEGER NOT NULL, 'win_5' INTEGER NOT NULL, 'lose_1' INTEGER NOT NULL, 'lose_2' INTEGER NOT NULL, 'lose_3' INTEGER NOT NULL, 'lose_4' INTEGER NOT NULL, 'lose_5' INTEGER NOT NULL, 'draw_1' INTEGER NOT NULL, 'draw_2' INTEGER NOT NULL, 'draw_3' INTEGER NOT NULL, 'draw_4' INTEGER NOT NULL, 'draw_5' INTEGER NOT NULL, 'position_y' INTEGER NOT NULL)
+
+---- TABLE: team_stadium_support_text ----
+CREATE TABLE 'team_stadium_support_text' ('id' INTEGER NOT NULL, 'type' INTEGER NOT NULL, 'min_bonus' INTEGER NOT NULL, 'max_bonus' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: text_data ----
+CREATE TABLE 'text_data' ('id' INTEGER NOT NULL, 'category' INTEGER NOT NULL, 'index' INTEGER NOT NULL, 'text' TEXT NOT NULL, PRIMARY KEY('category','index'))
+
+---- TABLE: trained_chara_trade_item ----
+CREATE TABLE 'trained_chara_trade_item' ('id' INTEGER NOT NULL, 'trained_chara_rank' INTEGER NOT NULL, 'trade_item_category' INTEGER NOT NULL, 'trade_item_id' INTEGER NOT NULL, 'trade_item_num' INTEGER NOT NULL, PRIMARY KEY('id'))
+
+---- TABLE: training_cutt_chara_data ----
+CREATE TABLE 'training_cutt_chara_data' ('id' INTEGER NOT NULL, 'command_id' INTEGER NOT NULL, 'sub_id' INTEGER NOT NULL, 'chara_num' INTEGER NOT NULL, 'chara_id' INTEGER NOT NULL, 'dress_id' INTEGER NOT NULL, 'target_timeline' INTEGER NOT NULL, 'target_list_index' INTEGER NOT NULL, 'prop_target' INTEGER NOT NULL, PRIMARY KEY('id'))
+
